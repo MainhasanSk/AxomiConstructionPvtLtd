@@ -27,56 +27,39 @@ export default function About({ onOpenConsultation }) {
   ];
 
   return (
-    <section id="about" className="py-24 relative overflow-hidden bg-navy-950">
+    <section id="about" className="scroll-mt-20 py-14 sm:py-24 relative overflow-hidden bg-navy-950">
       {/* Blueprint grid accent */}
       <div className="absolute inset-0 bg-blueprint opacity-20 pointer-events-none"></div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
           {/* Left Column: Real Company Photograph (Team at Corporate Office) */}
-          <div className="lg:col-span-6 relative">
-            <div className="relative rounded-2xl overflow-hidden border border-gold-500/30 p-2 bg-gradient-to-b from-navy-800 to-navy-900 shadow-2xl">
-              <div className="relative rounded-xl overflow-hidden aspect-[4/3] bg-navy-950">
+          <div className="lg:col-span-6 space-y-3">
+            {/* Photo Box - 100% Unobstructed, Bright, and Fully Visible */}
+            <div className="relative rounded-2xl overflow-hidden border border-gold-500/40 p-2 sm:p-2.5 bg-gradient-to-b from-navy-800 to-navy-900 shadow-2xl">
+              <div className="relative rounded-xl overflow-hidden bg-navy-950">
                 <img
                   src="/teamaxomi2.jpg"
                   alt="Axomi Construction Team at Head Office"
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-auto block rounded-lg aspect-[4/3] object-contain sm:object-cover bg-navy-950"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent"></div>
-
-                {/* Badge Overlay */}
-                <div className="absolute bottom-4 left-4 right-4 p-3 rounded-lg bg-navy-900/90 backdrop-blur-md border border-slate-700/80">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <span className="text-xs font-bold text-white block">
-                        Headquarters & Project Office
-                      </span>
-                      <span className="text-[11px] text-gold-400 font-medium">
-                        Axomi Construction Private Limited
-                      </span>
-                    </div>
-                    <span className="px-2.5 py-1 rounded text-[10px] font-bold uppercase tracking-wider text-emerald-300 bg-emerald-950/60 border border-emerald-500/30">
-                      Active Operations
-                    </span>
-                  </div>
-                </div>
               </div>
             </div>
 
-            {/* Corner Decorative Accent */}
-            <div className="hidden sm:block absolute -bottom-5 -left-5 p-4 rounded-xl bg-navy-900 border border-gold-500/40 shadow-xl max-w-xs">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 shrink-0">
-                  <Shield size={20} />
-                </div>
+            {/* Dedicated Text Card Cleanly Below The Photo */}
+            <div className="p-3.5 sm:p-4 rounded-xl bg-navy-900/95 border border-slate-700/80 shadow-lg">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
                 <div>
-                  <span className="text-xs font-bold text-white block">
-                    Grounded in Trust
+                  <span className="text-xs sm:text-sm font-bold text-white block">
+                    Headquarters & Project Office
                   </span>
-                  <span className="text-[11px] text-slate-400 leading-tight block">
-                    {companyData.positioning.split(' | ').slice(0, 3).join(' • ')}
+                  <span className="text-[11px] sm:text-xs text-gold-400 font-medium">
+                    Axomi Construction Private Limited
                   </span>
                 </div>
+                <span className="self-start sm:self-auto px-2.5 py-1 rounded text-[10px] font-bold uppercase tracking-wider text-emerald-300 bg-emerald-950/70 border border-emerald-500/40">
+                  Active Operations
+                </span>
               </div>
             </div>
           </div>
