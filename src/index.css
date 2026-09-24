@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  body {
+    background-color: #040711;
+    color: #F1F5F9;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Custom luxury scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #080E21;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1D306C;
+    border-radius: 4px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #D4AF37;
+  }
+}
+
+@layer utilities {
+  /* Architectural Blueprint Grid Pattern */
+  .bg-blueprint {
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgba(212, 175, 55, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(212, 175, 55, 0.04) 1px, transparent 1px);
+  }
+
+  .bg-blueprint-dense {
+    background-size: 20px 20px;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  }
+
+  .bg-radial-vignette {
+    background: radial-gradient(circle at 50% 30%, rgba(29, 48, 108, 0.25) 0%, rgba(4, 7, 17, 0.95) 75%);
+  }
+
+  .bg-radial-hero {
+    background: radial-gradient(ellipse at 50% 0%, rgba(29, 48, 108, 0.4) 0%, rgba(4, 7, 17, 0.98) 70%);
+  }
+
+  /* Gold metallic text gradient */
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #FFFDF0 0%, #F5CD4F 35%, #D4AF37 70%, #B89224 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gold-shimmer {
+    background: linear-gradient(90deg, #D4AF37 0%, #FFF4C2 50%, #D4AF37 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: goldShimmer 6s linear infinite;
+  }
+
+  /* Glassmorphism elements */
+  .glass-card {
+    background: rgba(12, 21, 48, 0.65);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-card-hover {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .glass-card-hover:hover {
+    background: rgba(17, 29, 66, 0.85);
+    border-color: rgba(212, 175, 55, 0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 30px -10px rgba(4, 7, 17, 0.8), 0 0 20px -5px rgba(212, 175, 55, 0.2);
+  }
+
+  .glass-nav {
+    background: rgba(8, 14, 33, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+  }
+
+  /* Gold line accents */
+  .gold-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, #D4AF37 50%, transparent 100%);
+  }
+
+  .gold-border-corner {
+    position: relative;
+  }
+  .gold-border-corner::before,
+  .gold-border-corner::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-color: #D4AF37;
+    pointer-events: none;
+  }
+  .gold-border-corner::before {
+    top: -1px;
+    left: -1px;
+    border-top: 2px solid #D4AF37;
+    border-left: 2px solid #D4AF37;
+  }
+  .gold-border-corner::after {
+    bottom: -1px;
+    right: -1px;
+    border-bottom: 2px solid #D4AF37;
+    border-right: 2px solid #D4AF37;
+  }
+}
+
+@keyframes goldShimmer {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 5s ease-in-out infinite;
+}
