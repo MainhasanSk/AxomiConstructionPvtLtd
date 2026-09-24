@@ -45,11 +45,34 @@ export default function Navbar({ onOpenConsultation }) {
                 />
               </div>
               <div className="flex flex-col">
-                <span className="font-display font-black text-lg sm:text-xl tracking-wider text-white flex items-center gap-1.5 leading-tight">
-                  AXOMI
-                  <span className="w-1.5 h-1.5 rounded-full bg-gold-400"></span>
-                </span>
-                <span className="text-[10px] sm:text-xs font-semibold tracking-widest text-gold-400 uppercase">
+                <div className="flex items-center leading-none">
+                  {/* AX in Metallic Magenta with Gold Bevel */}
+                  <span className="font-display font-black text-xl sm:text-2xl tracking-wide text-axomi-logo">
+                    AX
+                  </span>
+
+                  {/* Iconic Custom 'O' from the uploaded logo with gold rim, magenta ring & green growth bars */}
+                  <span className="relative inline-flex items-center justify-center w-[17px] h-[17px] sm:w-[21px] sm:h-[21px] mx-[2px] rounded-full p-[1.5px] bg-gradient-to-b from-[#F5CD4F] via-[#D4AF37] to-[#B89224] shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
+                    <span className="w-full h-full rounded-full p-[2px] bg-gradient-to-b from-[#FF457E] to-[#880833] flex items-center justify-center">
+                      <span className="w-full h-full rounded-full bg-[#050B18] flex items-center justify-center p-[2px] border border-emerald-500/40">
+                        {/* Green growth bars & arrow */}
+                        <svg viewBox="0 0 16 16" className="w-full h-full" fill="currentColor">
+                          <rect x="2.5" y="9" width="2.2" height="5" rx="0.5" fill="#22C55E" />
+                          <rect x="6" y="6" width="2.2" height="8" rx="0.5" fill="#22C55E" />
+                          <rect x="9.5" y="3.5" width="2.2" height="10.5" rx="0.5" fill="#4ADE80" />
+                          <path d="M7 4L12.5 2L13 7.5" stroke="#4ADE80" strokeWidth="1.3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </span>
+                    </span>
+                  </span>
+
+                  {/* MI in Metallic Magenta with Gold Bevel */}
+                  <span className="font-display font-black text-xl sm:text-2xl tracking-wide text-axomi-logo">
+                    MI
+                  </span>
+                </div>
+
+                <span className="text-[9px] sm:text-[10px] font-black text-axomi-logo-sub uppercase mt-1 leading-none">
                   CONSTRUCTION PVT. LTD.
                 </span>
               </div>
